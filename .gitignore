@@ -14,4 +14,7 @@ __pycache__/
 # Nomad variable files
 *.hcl
 
+# macOS system files
+.DS_Store
+
 
