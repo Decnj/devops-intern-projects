@@ -1,11 +1,17 @@
-# Use the official python image to build the container
-FROM python:3.10-alpine
+# Use a lightweight Python base image
+FROM python:3.10-slim
 
-# Set the current working directory
+# Set working directory inside the container
 WORKDIR /app
 
-# Copy the hello.py file into the container
+# Copy Flask app into the container
 COPY scripts/hello.py .
 
-# Run the script on container startup
+# Install Flask
+RUN pip install flask
+
+# Expose port 5000 for the Flask app
+EXPOSE 5000
+
+# Run the app
 CMD ["python", "hello.py"]
