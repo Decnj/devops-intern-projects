@@ -16,7 +16,7 @@ I created a Dockerfile using a lightweight base image "python:3.10-alpine. The w
 I setup a GitHub Actions workflow that automatically runs the python "hello.py" script whenever i push code to the main branch on my remote repo on github. I equally attached a live status  badge  that reflects the success or failure of each run.
 
 ## Job Deployment with Nomad
-I wrote a configuration file "hello.nomad" for a Nomad job "hello-devops". It sets up a Docker container using an image built locally and pushed to Docker Hub. The job operates within a group called "hello-group", it exposes port 5000 for HTTP traffic and executes a Python script on container startup. The task named "hello-task" is allocated minimal resources i.e. 100 MHz of CPU and 128 MB of memory. Before deployment of the job, start the Nomad agent in development mode "nomad agent -dev > ./nomad.log 2>&1 &". Once the agent is running, the job can be deployed using "nomad job run hello.nomad".
+I wrote a configuration file "hello.nomad" for a Nomad job "flask-group". It sets up a Docker container using an image built locally and pushed to Docker Hub. The job operates within a group called "flask-group", it exposes the flask app on port 5000 of the node running the job. The task named "hello-task" is allocated minimal resources i.e. 100 MHz of CPU and 128 MB of memory. Before deployment of the job, start the Nomad agent in development mode "nomad agent -dev > ./nomad.log 2>&1 &". Once the agent is running, the job can be deployed using "nomad job run hello.nomad".
 
 ## Monitoring with Grafana Loki
 I started Loki locally using Docker with the follwing command, mounting my log directory from my host machine:
