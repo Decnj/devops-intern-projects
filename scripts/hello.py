@@ -1,3 +1,14 @@
-# A basic python script that prints "Hello, DevOps!"
+# Simple Flask "Hello, DevOps!" Web Application
 
-print("Hello, DevOps!")
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello DevOps!"
+
+# Keeps app running until you stop it
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+
+
