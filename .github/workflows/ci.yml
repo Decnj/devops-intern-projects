@@ -1,6 +1,6 @@
-# A Github Actions Workflow that runs "hello.py" automatically on every push.
+# A Github Actions Workflow that runs "hello-test.py" automatically on every push.
 
-name: Run hello.py
+name: Run hello-test.py
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -22,4 +22,4 @@ jobs:
 
       - name: Run hello.py
         working-directory: ./scripts
-        run: python hello.py
+        run: python hello-test.py
