@@ -14,8 +14,8 @@ job "hello-devops" {
 	task "flask-app" {
 	    driver = "docker"
 
-	        config {
-	            image = "decnj/hello-flask"
+	    config {
+	        image = "decnj/hello-flask"
 		    ports = ["http"]
 		}
 		
