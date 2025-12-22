@@ -1,0 +1,13 @@
+I started Loki will a simple "docker run -d --name=loki -p 3100:3100 grafana/loki"
+
+I downloaded promtail on my local machine with "brew install promtail"
+
+I configured promtail.yaml and started it using "promtail -config.file=$(PWD)/monitoring/promtail.yaml" to locate and forward logs from my container app to loki for storage.
+
+I submitted my nomad job "nomad job run hello.nomad" and my app was up and running, generating logs
+
+I started Grafana using "docker run -d --name=grafana -p 3000:3000 grafana/grafana" to query and visualize my container app logs pushed to Loki by Promtail.
+
+I accessed Grafana Graphical User Interface using "http://localhost:3000" where I connected my loki as data source "http://host.docker.internal:3100" (loki was bound to my mac on port 3100 and grafana was inside a docker container).
+
+I used {job="flask-app", stream="stderr"} to query my logs stored on loki
