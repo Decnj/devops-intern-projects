@@ -3,12 +3,13 @@
 # Logs and runtime files
 *.log
 *.tmp
+positions.yaml
 
 # Python cache
 __pycache__/
 *.pyc
 
-# Env files
+# Environment variable files
 .env
 
 # Nomad variable files
