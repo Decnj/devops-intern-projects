@@ -14,6 +14,12 @@ __pycache__/
 # Nomad variable files
 *.hcl
 
+# Nomad runtime state and logs
+nomad-data/
+
+# Nomad allocation mounts
+alloc_mounts/
+
 # macOS system files
 .DS_Store
 

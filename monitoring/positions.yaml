@@ -1,0 +1,5 @@
+positions:
+  ? /Users/Dee/Desktop/DevOps/devops-intern-projects/nomad-data/alloc/320ce9e8-c636-879d-9ec3-f559a4d90894/alloc/logs/flask-app.stderr.0
+  : "456"
+  ? /Users/Dee/Desktop/DevOps/devops-intern-projects/nomad-data/alloc/320ce9e8-c636-879d-9ec3-f559a4d90894/alloc/logs/flask-app.stdout.0
+  : "48"

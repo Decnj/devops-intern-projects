@@ -1,0 +1,27 @@
+server:
+  http_listen_port: 9080
+
+clients:
+  - url: http://localhost:3100/loki/api/v1/push
+
+positions:
+  filename: /Users/Dee/Desktop/DevOps/devops-intern-projects/monitoring/positions.yaml
+
+scrape_configs:
+  - job_name: nomad-stdout
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: flask-app
+          stream: stdout
+          __path__: /Users/Dee/Desktop/DevOps/devops-intern-projects/nomad-data/alloc/*/alloc/logs/flask-app.stdout.0
+
+  - job_name: nomad-stderr
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: flask-app
+          stream: stderr
+          __path__: /Users/Dee/Desktop/DevOps/devops-intern-projects/nomad-data/alloc/*/alloc/logs/flask-app.stderr.0
